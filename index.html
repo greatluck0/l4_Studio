@@ -13,7 +13,7 @@
     }
     h1 {
       text-align: center;
-      color: #ea4141;
+      color: #0005a4;
     }
     .form-section {
       margin-bottom: 20px;
@@ -52,13 +52,13 @@
       margin-right: 10px;
     }
     button {
-      background-color: #ea4141;
+      background-color: #0005a4;
       color: white;
       border: none;
       cursor: pointer;
     }
     button:hover {
-      background-color: #ffa2a2;
+      background-color: #00035a;
     }
     .quantity-input {
       width: 60px;
@@ -85,14 +85,14 @@
   <label for="name">이름:</label>
   <input type="text" id="name" name="name" placeholder="이름 입력"><br>
 
-  <label for="studentId">학번:</label>
+  <label for="studentId">학번 (8자리):</label>
   <input type="text" id="studentId" name="studentId" placeholder="학번 입력"><br>
 
   <label for="department">학과:</label>
   <input type="text" id="department" name="department" placeholder="학과 입력"><br>
 
   <label for="phone">전화번호:</label>
-  <input type="text" id="phone" name="phone" placeholder="전화번호 입력"><br>
+  <input type="text" id="phone" name="phone" plasceholder="전화번호 입력"><br>
 
   <label for="rentalDate">대여일 (시간 포함):</label>
   <input type="datetime-local" id="rentalDate" name="rentalDate"><br>
@@ -103,28 +103,23 @@
 
 
     <div class="form-section">
-      <label>장비 목록:</label>
       <h2>카메라</h2>
 <div class='category-section'>
-<input type="checkbox" id="소니 A7M3" name="equipment" value="소니 A7M3" onchange="toggleQuantityInput(this, 'qty_소니 A7M3')"> <label for="소니 A7M3">소니 A7M3</label>
+<input type="checkbox" id="소니 A7M3" name="equipment" value="소니 A7M3" onchange="toggleQuantityInput(this, 'qty_소니 A7M3')"> <label for="소니 A7M3">소니 A7M3 [최대 3개]</label>
 <input type="number" id="qty_소니 A7M3" name="quantity_소니 A7M3" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="CANON Professional XA20" name="equipment" value="CANON Professional XA20" onchange="toggleQuantityInput(this, 'qty_CANON Professional XA20')"> <label for="CANON Professional XA20">CANON Professional XA20</label>
+<input type="checkbox" id="CANON Professional XA20" name="equipment" value="캐논 캠코더 (XA20)" onchange="toggleQuantityInput(this, 'qty_CANON Professional XA20')"> <label for="CANON Professional XA20">캐논 캠코더 (XA20) [최대 5개]</label>
 <input type="number" id="qty_CANON Professional XA20" name="quantity_CANON Professional XA20" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 EOS 6D" name="equipment" value="캐논 EOS 6D" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 6D')"> <label for="캐논 EOS 6D">캐논 EOS 6D</label>
+<input type="checkbox" id="캐논 EOS 6D" name="equipment" value="캐논 EOS 6D" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 6D')"> <label for="캐논 EOS 6D">캐논 EOS 6D [최대 1개]</label>
 <input type="number" id="qty_캐논 EOS 6D" name="quantity_캐논 EOS 6D" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 EOS 80D" name="equipment" value="캐논 EOS 80D" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 80D')"> <label for="캐논 EOS 80D">캐논 EOS 80D</label>
+<input type="checkbox" id="캐논 EOS 80D" name="equipment" value="캐논 EOS 80D" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 80D')"> <label for="캐논 EOS 80D">캐논 EOS 80D [최대 2개]</label>
 <input type="number" id="qty_캐논 EOS 80D" name="quantity_캐논 EOS 80D" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 EOS 90D" name="equipment" value="캐논 EOS 90D" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 90D')"> <label for="캐논 EOS 90D">캐논 EOS 90D</label>
+<input type="checkbox" id="캐논 EOS 90D" name="equipment" value="캐논 EOS 90D" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 90D')"> <label for="캐논 EOS 90D">캐논 EOS 90D [최대 1개]</label>
 <input type="number" id="qty_캐논 EOS 90D" name="quantity_캐논 EOS 90D" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 </div>
 <h2>카메라렌즈</h2>
 <div class='category-section'>
-<input type="checkbox" id="SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS" name="equipment" value="SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS" onchange="toggleQuantityInput(this, 'qty_SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS')"> <label for="SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS">SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS</label>
+<input type="checkbox" id="SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS" name="equipment" value="소니 FE 24-70mm F4 ZA OSS" onchange="toggleQuantityInput(this, 'qty_SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS')"> <label for="SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS">소니 FE 24-70mm F4 ZA OSS [최대 3개]</label>
 <input type="number" id="qty_SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS" name="quantity_SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="SIGMA MC-11 EF-E 마운트 컨버터" name="equipment" value="SIGMA MC-11 EF-E 마운트 컨버터" onchange="toggleQuantityInput(this, 'qty_SIGMA MC-11 EF-E 마운트 컨버터')"> <label for="SIGMA MC-11 EF-E 마운트 컨버터">SIGMA MC-11 EF-E 마운트 컨버터</label>
-<input type="number" id="qty_SIGMA MC-11 EF-E 마운트 컨버터" name="quantity_SIGMA MC-11 EF-E 마운트 컨버터" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" name="equipment" value="SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" onchange="toggleQuantityInput(this, 'qty_SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용')"> <label for="SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용">SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용</label>
-<input type="number" id="qty_SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" name="quantity_SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 <input type="checkbox" id="캐논 EF-S 17-55mm F2.8 IS USM" name="equipment" value="캐논 EF-S 17-55mm F2.8 IS USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF-S 17-55mm F2.8 IS USM')"> <label for="캐논 EF-S 17-55mm F2.8 IS USM">캐논 EF-S 17-55mm F2.8 IS USM</label>
 <input type="number" id="qty_캐논 EF-S 17-55mm F2.8 IS USM" name="quantity_캐논 EF-S 17-55mm F2.8 IS USM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 <input type="checkbox" id="캐논 EF-S 10-22mm F3.5-4.5 USM" name="equipment" value="캐논 EF-S 10-22mm F3.5-4.5 USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF-S 10-22mm F3.5-4.5 USM')"> <label for="캐논 EF-S 10-22mm F3.5-4.5 USM">캐논 EF-S 10-22mm F3.5-4.5 USM</label>
@@ -140,7 +135,12 @@
 <input type="checkbox" id="캐논 EF 85mm F1.8 USM" name="equipment" value="캐논 EF 85mm F1.8 USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF 85mm F1.8 USM')"> <label for="캐논 EF 85mm F1.8 USM">캐논 EF 85mm F1.8 USM</label>
 <input type="number" id="qty_캐논 EF 85mm F1.8 USM" name="quantity_캐논 EF 85mm F1.8 USM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 <input type="checkbox" id="캐논 EF 70-300mm F4-5.6 L IS USM" name="equipment" value="캐논 EF 70-300mm F4-5.6 L IS USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF 70-300mm F4-5.6 L IS USM')"> <label for="캐논 EF 70-300mm F4-5.6 L IS USM">캐논 EF 70-300mm F4-5.6 L IS USM</label>
-<input type="number" id="qty_캐논 EF 70-300mm F4-5.6 L IS USM" name="quantity_캐논 EF 70-300mm F4-5.6 L IS USM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+<input type="number" id="qty_캐논 EF 70-300mm F4-5.6 L IS USM" name="quantity_캐논 EF 70-300mm F4-5.6 L IS USM" class="quantity-input" placeholder="수량" min="1" style="display: none;">
+<br>
+<input type="checkbox" id="SIGMA MC-11 EF-FE 마운트 컨버터" name="equipment" value="SIGMA MC-11 EF-FE 마운트 컨버터" onchange="toggleQuantityInput(this, 'qty_SIGMA MC-11 EF-FE 마운트 컨버터')"> <label for="SIGMA MC-11 EF-FE 마운트 컨버터">SIGMA MC-11 EF-FE 마운트 컨버터 [최대 2개]</label>
+<input type="number" id="qty_SIGMA MC-11 EF-FE 마운트 컨버터" name="quantity_SIGMA MC-11 EF-FE 마운트 컨버터" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+<input type="checkbox" id="SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" name="equipment" value="SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" onchange="toggleQuantityInput(this, 'qty_SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용')"> <label for="SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용">SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용</label>
+<input type="number" id="qty_SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" name="quantity_SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 </div>
 <h2>오디오</h2>
 <div class='category-section'>
@@ -256,8 +256,8 @@
         selectedItems.push(checkbox.value + ' (' + quantity + '개)');
       });
 
-      let resultText = "이름: " + name + "\n학번: " + studentId + "\n학과: " + department +
-                       "\n전화번호: " + phone + "\n대여일: " + rentalDate + "\n반납일: " + returnDate + "\n";
+      let resultText = "[장비대여 신청]\n" + "이　　름: " + name + "\n학　　번: " + studentId + "\n학　　과: " + department +
+                       "\n전화번호: " + phone + "\n\n대여일시: " + rentalDate + "\n반납일시: " + returnDate + "\n";
 
       if (selectedItems.length === 0) {
         resultText += "\n선택된 장비가 없습니다.";
