@@ -6,8 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>장비 대여 신청 양식 생성 도구</title>
   <style>
+
+    @font-face {
+    font-family: 'ChosunKg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunKg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'ChosunSg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunSg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    * {
+      font-family: 'ChosunSg', Arial, sans-serif;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'ChosunSg', Arial, sans-serif;
       margin: 20px;
       line-height: 1.6;
     }
@@ -15,7 +34,17 @@
       text-align: center;
       color:#333;
     }
-    h1 {
+    .titlename{
+      margin-top: 50px;
+      line-height: 1.0;
+    }
+    .titlename h1 {
+      font-family: 'chosunKg';
+      text-align: center;
+      color: #0005a4;
+    }
+    .titlename h2 {
+      font-family: 'chosunSg';
       text-align: center;
       color: #0005a4;
     }
@@ -82,21 +111,26 @@
   </style>
 </head>
 <body>
-  <h1>한남대 미디어영상학과<br>장비대여 신청 양식 생성 도구</h1>
+  <div class="titlename"><h1>한남대 미디어영상학과</h1>
+    <h2>대여 신청 양식 생성 도구</h2></div>
+  
   <form id="rentalForm">
     
 <div class="form-section">
   <label for="name">이름:</label>
   <input type="text" id="name" name="name" placeholder="이름 입력"><br>
 
-  <label for="studentId">학번 (8자리):</label>
-  <input type="text" id="studentId" name="studentId" placeholder="학번 입력"><br>
+  <label for="studentId">학번:</label>
+  <input type="text" id="studentId" name="studentId" placeholder="8자리 학번 입력"><br>
 
   <label for="department">학과:</label>
   <input type="text" id="department" name="department" placeholder="학과 입력"><br>
 
   <label for="phone">전화번호:</label>
-  <input type="number" id="phone" name="phone" placeholder="전화번호 입력"><br>
+  <input type="text" id="phone" name="phone" placeholder="전화번호 입력"><br>
+
+  <label for="mokjuk">대여목적:</label>
+  <input type="text" id="mokjuk" name="mokjuk" placeholder="대여 목적 입력 (상세하게 서술할 것)"><br>
 
   <label for="rentalDate">대여일 (시간 포함):</label>
   <input type="datetime-local" id="rentalDate" name="rentalDate"><br>
@@ -109,59 +143,82 @@
     <div class="form-section">
       <h2>카메라</h2>
 <div class='category-section'>
-<input type="checkbox" id="소니 A7M3" name="equipment" value="소니 A7M3" onchange="toggleQuantityInput(this, 'qty_소니 A7M3')"> <label for="소니 A7M3">소니 A7M3 [최대 3개]</label>
-<input type="number" id="qty_소니 A7M3" name="quantity_소니 A7M3" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="CANON Professional XA20" name="equipment" value="캐논 캠코더 (XA20)" onchange="toggleQuantityInput(this, 'qty_CANON Professional XA20')"> <label for="CANON Professional XA20">캐논 캠코더 (XA20) [최대 5개]</label>
-<input type="number" id="qty_CANON Professional XA20" name="quantity_CANON Professional XA20" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 EOS 6D" name="equipment" value="캐논 EOS 6D" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 6D')"> <label for="캐논 EOS 6D">캐논 EOS 6D [최대 1개]</label>
-<input type="number" id="qty_캐논 EOS 6D" name="quantity_캐논 EOS 6D" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 EOS 80D" name="equipment" value="캐논 EOS 80D" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 80D')"> <label for="캐논 EOS 80D">캐논 EOS 80D [최대 2개]</label>
-<input type="number" id="qty_캐논 EOS 80D" name="quantity_캐논 EOS 80D" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 EOS 90D" name="equipment" value="캐논 EOS 90D" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 90D')"> <label for="캐논 EOS 90D">캐논 EOS 90D [최대 1개]</label>
-<input type="number" id="qty_캐논 EOS 90D" name="quantity_캐논 EOS 90D" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="소니 A7M3" name="equipment" value="소니 A7M3" onchange="toggleQuantityInput(this, 'qty_소니 A7M3')"> <label for="소니 A7M3">소니 A7M3 [최대 3개]</label>
+    <input type="number" id="qty_소니 A7M3" name="quantity_소니 A7M3" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="CANON Professional XA20" name="equipment" value="캐논 캠코더 (XA20)" onchange="toggleQuantityInput(this, 'qty_CANON Professional XA20')"> <label for="CANON Professional XA20">캐논 캠코더 (XA20) [최대 5개]</label>
+    <input type="number" id="qty_CANON Professional XA20" name="quantity_CANON Professional XA20" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="캐논 EOS 6D" name="equipment" value="캐논 EOS 6D" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 6D')"> <label for="캐논 EOS 6D">캐논 EOS 6D [최대 1개]</label>
+    <input type="number" id="qty_캐논 EOS 6D" name="quantity_캐논 EOS 6D" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="캐논 EOS 80D" name="equipment" value="캐논 EOS 80D" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 80D')"> <label for="캐논 EOS 80D">캐논 EOS 80D [최대 2개]</label>
+    <input type="number" id="qty_캐논 EOS 80D" name="quantity_캐논 EOS 80D" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="캐논 EOS 90D" name="equipment" value="캐논 EOS 90D" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 90D')"> <label for="캐논 EOS 90D">캐논 EOS 90D [최대 1개]</label>
+    <input type="number" id="qty_캐논 EOS 90D" name="quantity_캐논 EOS 90D" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
 </div>
+
 <h2>카메라렌즈</h2>
 <div class='category-section'>
-<input type="checkbox" id="SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS" name="equipment" value="소니 FE 24-70mm F4 ZA OSS" onchange="toggleQuantityInput(this, 'qty_SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS')"> <label for="SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS">소니 FE 24-70mm F4 ZA OSS [최대 3개]</label>
-<input type="number" id="qty_SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS" name="quantity_SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 EF-S 17-55mm F2.8 IS USM" name="equipment" value="캐논 EF-S 17-55mm F2.8 IS USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF-S 17-55mm F2.8 IS USM')"> <label for="캐논 EF-S 17-55mm F2.8 IS USM">캐논 EF-S 17-55mm F2.8 IS USM</label>
-<input type="number" id="qty_캐논 EF-S 17-55mm F2.8 IS USM" name="quantity_캐논 EF-S 17-55mm F2.8 IS USM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 EF-S 10-22mm F3.5-4.5 USM" name="equipment" value="캐논 EF-S 10-22mm F3.5-4.5 USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF-S 10-22mm F3.5-4.5 USM')"> <label for="캐논 EF-S 10-22mm F3.5-4.5 USM">캐논 EF-S 10-22mm F3.5-4.5 USM</label>
-<input type="number" id="qty_캐논 EF-S 10-22mm F3.5-4.5 USM" name="quantity_캐논 EF-S 10-22mm F3.5-4.5 USM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 EF-S 18-135mm F3.5-5.6 IS USM" name="equipment" value="캐논 EF-S 18-135mm F3.5-5.6 IS USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF-S 18-135mm F3.5-5.6 IS USM')"> <label for="캐논 EF-S 18-135mm F3.5-5.6 IS USM">캐논 EF-S 18-135mm F3.5-5.6 IS USM</label>
-<input type="number" id="qty_캐논 EF-S 18-135mm F3.5-5.6 IS USM" name="quantity_캐논 EF-S 18-135mm F3.5-5.6 IS USM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 EF-S 24mm F2.8 STM" name="equipment" value="캐논 EF-S 24mm F2.8 STM" onchange="toggleQuantityInput(this, 'qty_캐논 EF-S 24mm F2.8 STM')"> <label for="캐논 EF-S 24mm F2.8 STM">캐논 EF-S 24mm F2.8 STM</label>
-<input type="number" id="qty_캐논 EF-S 24mm F2.8 STM" name="quantity_캐논 EF-S 24mm F2.8 STM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 EF 50mm F1.8 STM" name="equipment" value="캐논 EF 50mm F1.8 STM" onchange="toggleQuantityInput(this, 'qty_캐논 EF 50mm F1.8 STM')"> <label for="캐논 EF 50mm F1.8 STM">캐논 EF 50mm F1.8 STM</label>
-<input type="number" id="qty_캐논 EF 50mm F1.8 STM" name="quantity_캐논 EF 50mm F1.8 STM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 EF 24-105mm F4 L IS USM" name="equipment" value="캐논 EF 24-105mm F4 L IS USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF 24-105mm F4 L IS USM')"> <label for="캐논 EF 24-105mm F4 L IS USM">캐논 EF 24-105mm F4 L IS USM</label>
-<input type="number" id="qty_캐논 EF 24-105mm F4 L IS USM" name="quantity_캐논 EF 24-105mm F4 L IS USM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 EF 85mm F1.8 USM" name="equipment" value="캐논 EF 85mm F1.8 USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF 85mm F1.8 USM')"> <label for="캐논 EF 85mm F1.8 USM">캐논 EF 85mm F1.8 USM</label>
-<input type="number" id="qty_캐논 EF 85mm F1.8 USM" name="quantity_캐논 EF 85mm F1.8 USM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 EF 70-300mm F4-5.6 L IS USM" name="equipment" value="캐논 EF 70-300mm F4-5.6 L IS USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF 70-300mm F4-5.6 L IS USM')"> <label for="캐논 EF 70-300mm F4-5.6 L IS USM">캐논 EF 70-300mm F4-5.6 L IS USM</label>
-<input type="number" id="qty_캐논 EF 70-300mm F4-5.6 L IS USM" name="quantity_캐논 EF 70-300mm F4-5.6 L IS USM" class="quantity-input" placeholder="수량" min="1" style="display: none;">
-<br>
-<input type="checkbox" id="SIGMA MC-11 EF-FE 마운트 컨버터" name="equipment" value="SIGMA MC-11 EF-FE 마운트 컨버터" onchange="toggleQuantityInput(this, 'qty_SIGMA MC-11 EF-FE 마운트 컨버터')"> <label for="SIGMA MC-11 EF-FE 마운트 컨버터">SIGMA MC-11 EF-FE 마운트 컨버터 [최대 2개]</label>
-<input type="number" id="qty_SIGMA MC-11 EF-FE 마운트 컨버터" name="quantity_SIGMA MC-11 EF-FE 마운트 컨버터" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" name="equipment" value="SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" onchange="toggleQuantityInput(this, 'qty_SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용')"> <label for="SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용">SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용</label>
-<input type="number" id="qty_SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" name="quantity_SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+    <input type="checkbox" id="SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS" name="equipment" value="소니 FE 24-70mm F4 ZA OSS" onchange="toggleQuantityInput(this, 'qty_SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS')"> <label for="SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS">소니 FE 24-70mm F4 ZA OSS [최대 3개]</label>
+    <input type="number" id="qty_SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS" name="quantity_SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="캐논 EF-S 17-55mm F2.8 IS USM" name="equipment" value="캐논 EF-S 17-55mm F2.8 IS USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF-S 17-55mm F2.8 IS USM')"> <label for="캐논 EF-S 17-55mm F2.8 IS USM">캐논 EF-S 17-55mm F2.8 IS USM [최대 2개]</label>
+    <input type="number" id="qty_캐논 EF-S 17-55mm F2.8 IS USM" name="quantity_캐논 EF-S 17-55mm F2.8 IS USM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="캐논 EF-S 10-22mm F3.5-4.5 USM" name="equipment" value="캐논 EF-S 10-22mm F3.5-4.5 USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF-S 10-22mm F3.5-4.5 USM')"> <label for="캐논 EF-S 10-22mm F3.5-4.5 USM">캐논 EF-S 10-22mm F3.5-4.5 USM [최대 2개]</label>
+    <input type="number" id="qty_캐논 EF-S 10-22mm F3.5-4.5 USM" name="quantity_캐논 EF-S 10-22mm F3.5-4.5 USM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="캐논 EF-S 18-135mm F3.5-5.6 IS USM" name="equipment" value="캐논 EF-S 18-135mm F3.5-5.6 IS USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF-S 18-135mm F3.5-5.6 IS USM')"> <label for="캐논 EF-S 18-135mm F3.5-5.6 IS USM">캐논 EF-S 18-135mm F3.5-5.6 IS USM </label>
+    <input type="number" id="qty_캐논 EF-S 18-135mm F3.5-5.6 IS USM" name="quantity_캐논 EF-S 18-135mm F3.5-5.6 IS USM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="캐논 EF-S 24mm F2.8 STM" name="equipment" value="캐논 EF-S 24mm F2.8 STM" onchange="toggleQuantityInput(this, 'qty_캐논 EF-S 24mm F2.8 STM')"> <label for="캐논 EF-S 24mm F2.8 STM">캐논 EF-S 24mm F2.8 STM</label>
+    <input type="number" id="qty_캐논 EF-S 24mm F2.8 STM" name="quantity_캐논 EF-S 24mm F2.8 STM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="캐논 EF 50mm F1.8 STM" name="equipment" value="캐논 EF 50mm F1.8 STM" onchange="toggleQuantityInput(this, 'qty_캐논 EF 50mm F1.8 STM')"> <label for="캐논 EF 50mm F1.8 STM">캐논 EF 50mm F1.8 STM</label>
+    <input type="number" id="qty_캐논 EF 50mm F1.8 STM" name="quantity_캐논 EF 50mm F1.8 STM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="캐논 EF 24-105mm F4 L IS USM" name="equipment" value="캐논 EF 24-105mm F4 L IS USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF 24-105mm F4 L IS USM')"> <label for="캐논 EF 24-105mm F4 L IS USM">캐논 EF 24-105mm F4 L IS USM</label>
+    <input type="number" id="qty_캐논 EF 24-105mm F4 L IS USM" name="quantity_캐논 EF 24-105mm F4 L IS USM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="캐논 EF 85mm F1.8 USM" name="equipment" value="캐논 EF 85mm F1.8 USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF 85mm F1.8 USM')"> <label for="캐논 EF 85mm F1.8 USM">캐논 EF 85mm F1.8 USM</label>
+    <input type="number" id="qty_캐논 EF 85mm F1.8 USM" name="quantity_캐논 EF 85mm F1.8 USM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="캐논 EF 70-300mm F4-5.6 L IS USM" name="equipment" value="캐논 EF 70-300mm F4-5.6 L IS USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF 70-300mm F4-5.6 L IS USM')"> <label for="캐논 EF 70-300mm F4-5.6 L IS USM">캐논 EF 70-300mm F4-5.6 L IS USM</label>
+    <input type="number" id="qty_캐논 EF 70-300mm F4-5.6 L IS USM" name="quantity_캐논 EF 70-300mm F4-5.6 L IS USM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="SIGMA MC-11 EF-FE 마운트 컨버터" name="equipment" value="SIGMA MC-11 EF-FE 마운트 컨버터" onchange="toggleQuantityInput(this, 'qty_SIGMA MC-11 EF-FE 마운트 컨버터')"> <label for="SIGMA MC-11 EF-FE 마운트 컨버터">SIGMA MC-11 EF-FE 마운트 컨버터 [최대 2개]</label>
+    <input type="number" id="qty_SIGMA MC-11 EF-FE 마운트 컨버터" name="quantity_SIGMA MC-11 EF-FE 마운트 컨버터" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" name="equipment" value="SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" onchange="toggleQuantityInput(this, 'qty_SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용')"> <label for="SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용">SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용</label>
+    <input type="number" id="qty_SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" name="quantity_SIGMA A 30mm F1.4 DC HSM 캐논 EF-S용" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
 </div>
 <h2>오디오</h2>
 <div class='category-section'>
-<input type="checkbox" id="RODE Wireless GO 무선 외장마이크" name="equipment" value="RODE Wireless GO 무선 외장마이크" onchange="toggleQuantityInput(this, 'qty_RODE Wireless GO 무선 외장마이크')"> <label for="RODE Wireless GO 무선 외장마이크">RODE Wireless GO 무선 외장마이크</label>
-<input type="number" id="qty_RODE Wireless GO 무선 외장마이크" name="quantity_RODE Wireless GO 무선 외장마이크" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="RODE 로데 NTG4 초지향성 샷건 마이크" name="equipment" value="RODE 로데 NTG4 초지향성 샷건 마이크" onchange="toggleQuantityInput(this, 'qty_RODE 로데 NTG4 초지향성 샷건 마이크')"> <label for="RODE 로데 NTG4 초지향성 샷건 마이크">RODE 로데 NTG4 초지향성 샷건 마이크</label>
-<input type="number" id="qty_RODE 로데 NTG4 초지향성 샷건 마이크" name="quantity_RODE 로데 NTG4 초지향성 샷건 마이크" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="RODE 핸들, 블림프, 윈드실드" name="equipment" value="RODE 핸들, 블림프, 윈드실드" onchange="toggleQuantityInput(this, 'qty_RODE 핸들, 블림프, 윈드실드')"> <label for="RODE 핸들, 블림프, 윈드실드">RODE 핸들, 블림프, 윈드실드</label>
-<input type="number" id="qty_RODE 핸들, 블림프, 윈드실드" name="quantity_RODE 핸들, 블림프, 윈드실드" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="RODE 붐폴" name="equipment" value="RODE 붐폴" onchange="toggleQuantityInput(this, 'qty_RODE 붐폴')"> <label for="RODE 붐폴">RODE 붐폴</label>
-<input type="number" id="qty_RODE 붐폴" name="quantity_RODE 붐폴" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="로데 비디오마이크 프로 플러스" name="equipment" value="로데 비디오마이크 프로 플러스" onchange="toggleQuantityInput(this, 'qty_로데 비디오마이크 프로 플러스')"> <label for="로데 비디오마이크 프로 플러스">로데 비디오마이크 프로 플러스</label>
-<input type="number" id="qty_로데 비디오마이크 프로 플러스" name="quantity_로데 비디오마이크 프로 플러스" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="로데 비디오 마이크로" name="equipment" value="로데 비디오 마이크로" onchange="toggleQuantityInput(this, 'qty_로데 비디오 마이크로')"> <label for="로데 비디오 마이크로">로데 비디오 마이크로</label>
-<input type="number" id="qty_로데 비디오 마이크로" name="quantity_로데 비디오 마이크로" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="TASCAM DR-70D 오디오 레코더" name="equipment" value="TASCAM DR-70D 오디오 레코더" onchange="toggleQuantityInput(this, 'qty_TASCAM DR-70D 오디오 레코더')"> <label for="TASCAM DR-70D 오디오 레코더">TASCAM DR-70D 오디오 레코더</label>
-<input type="number" id="qty_TASCAM DR-70D 오디오 레코더" name="quantity_TASCAM DR-70D 오디오 레코더" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+    <input type="checkbox" id="RODE Wireless GO 무선 외장마이크" name="equipment" value="RODE Wireless GO 무선 외장마이크" onchange="toggleQuantityInput(this, 'qty_RODE Wireless GO 무선 외장마이크')"> <label for="RODE Wireless GO 무선 외장마이크">RODE Wireless GO 무선 외장마이크</label>
+    <input type="number" id="qty_RODE Wireless GO 무선 외장마이크" name="quantity_RODE Wireless GO 무선 외장마이크" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="RODE 로데 NTG4 초지향성 샷건 마이크" name="equipment" value="RODE 로데 NTG4 초지향성 샷건 마이크" onchange="toggleQuantityInput(this, 'qty_RODE 로데 NTG4 초지향성 샷건 마이크')"> <label for="RODE 로데 NTG4 초지향성 샷건 마이크">RODE 로데 NTG4 초지향성 샷건 마이크</label>
+    <input type="number" id="qty_RODE 로데 NTG4 초지향성 샷건 마이크" name="quantity_RODE 로데 NTG4 초지향성 샷건 마이크" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="RODE 핸들, 블림프, 윈드실드" name="equipment" value="RODE 핸들, 블림프, 윈드실드" onchange="toggleQuantityInput(this, 'qty_RODE 핸들, 블림프, 윈드실드')"> <label for="RODE 핸들, 블림프, 윈드실드">RODE 핸들, 블림프, 윈드실드</label>
+    <input type="number" id="qty_RODE 핸들, 블림프, 윈드실드" name="quantity_RODE 핸들, 블림프, 윈드실드" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="RODE 붐폴" name="equipment" value="RODE 붐폴" onchange="toggleQuantityInput(this, 'qty_RODE 붐폴')"> <label for="RODE 붐폴">RODE 붐폴</label>
+    <input type="number" id="qty_RODE 붐폴" name="quantity_RODE 붐폴" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="로데 비디오마이크 프로 플러스" name="equipment" value="로데 비디오마이크 프로 플러스" onchange="toggleQuantityInput(this, 'qty_로데 비디오마이크 프로 플러스')"> <label for="로데 비디오마이크 프로 플러스">로데 비디오마이크 프로 플러스</label>
+    <input type="number" id="qty_로데 비디오마이크 프로 플러스" name="quantity_로데 비디오마이크 프로 플러스" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="로데 비디오 마이크로" name="equipment" value="로데 비디오 마이크로" onchange="toggleQuantityInput(this, 'qty_로데 비디오 마이크로')"> <label for="로데 비디오 마이크로">로데 비디오 마이크로</label>
+    <input type="number" id="qty_로데 비디오 마이크로" name="quantity_로데 비디오 마이크로" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+
+    <input type="checkbox" id="TASCAM DR-70D 오디오 레코더" name="equipment" value="TASCAM DR-70D 오디오 레코더" onchange="toggleQuantityInput(this, 'qty_TASCAM DR-70D 오디오 레코더')"> <label for="TASCAM DR-70D 오디오 레코더">TASCAM DR-70D 오디오 레코더</label>
+    <input type="number" id="qty_TASCAM DR-70D 오디오 레코더" name="quantity_TASCAM DR-70D 오디오 레코더" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 </div>
 <h2>조명</h2>
 <div class='category-section'>
@@ -252,6 +309,7 @@
       const studentId = document.getElementById('studentId').value || "미입력";
       const department = document.getElementById('department').value || "미입력";
       const phone = document.getElementById('phone').value || "미입력";
+      const mokjuk = document.getElementById('mokjuk').value || "미입력";
       const rentalDate = document.getElementById('rentalDate').value || "미입력";
       const returnDate = document.getElementById('returnDate').value || "미입력";
 
@@ -265,7 +323,7 @@
       });
 
       let resultText = "[장비대여 신청]\n" + "이　　름: " + name + "\n학　　번: " + studentId + "\n학　　과: " + department +
-                       "\n전화번호: " + phone + "\n\n대여일시: " + rentalDate + "\n반납일시: " + returnDate + "\n";
+                       "\n전화번호: " + phone + "\n대여목적: " + mokjuk + "\n\n대여일시: " + rentalDate + "\n반납일시: " + returnDate + "\n";
 
       if (selectedItems.length === 0) {
         resultText += "\n선택된 장비가 없습니다.";
