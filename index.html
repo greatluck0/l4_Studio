@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -73,6 +72,9 @@
       background-color: #ffffff;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+    
+    
+
     label {
       display: contents;
       margin-bottom: 5px;
@@ -144,11 +146,26 @@
 
   <label for="returnDate">반납일 (시간 포함):</label>
   <input type="datetime-local" id="returnDate" name="returnDate"><br>
+  <p>✔ 이용신청은 반납예정일로부터 10일 전부터, 대여예정일 3일 전까지 신청가능 / 모든 대여는 일일 09시 부터 20시까지 시간내에 신청.</p>
 </div>
+<br>
 
+<!--
+<div class="category-section3">
+    <nav>
+      <a href="#linkBody">카메라바디</a>
+      <a href="#linkLens">카메라렌즈</a>
+      <a href="#linkAudio">오디오</a>
+      <a href="#linkLight">조명</a>
+      <a href="#linkEtc1">촬영장비</a>
+      <a href="#linkPower">배터리</a>
+      <a href="#linkEtc2">기타</a>
+    </nav>
+  </div>
 
+  -->
     <div class="form-section">
-      <h2>카메라바디</h2>
+      <h2 id="linkBody">카메라바디</h2>
 <div class='category-section'>
 
     <input type="checkbox" id="소니 A7M3" name="equipment" value="소니 A7M3" onchange="toggleQuantityInput(this, 'qty_소니 A7M3')"> <label for="소니 A7M3">소니 A7M3 [최대 3개]</label>
@@ -169,7 +186,7 @@
     <p>✔ 카메라 배터리와 SD카드는 하단 메뉴에서 별도 신청.</p>
 </div>
 
-<h2>카메라렌즈</h2>
+<h2 id="linkLens">카메라렌즈</h2>
 <div class='category-section'>
   <div class='category-section2'>
     <h2>소니 풀프레임 렌즈</h2>
@@ -220,7 +237,7 @@
 
     <p>✔ SIGMA 마운트 컨버터를 사용해서 소니 A7m3에 캐논 풀프레임 렌즈를 사용할 수 있음.</p>
 </div>
-<h2>오디오</h2>
+<h2 id="linkAudio">오디오</h2>
 <div class='category-section'>
     
 
@@ -255,7 +272,7 @@
 
     <p>✔ TASCAM 전원 배터리는 AA건전지 4개 사용. 건전지 제공 하지 않음.</p>
 </div>
-<h2>조명</h2>
+<h2 id="linkLight">조명</h2>
 <div class='category-section'>
 
   <div class='category-section2'>
@@ -296,7 +313,7 @@
 <p>✔ 일반적인 조명 사용 경우 A스탠드를 빌려가면 됩니다.</p>
 
 </div>
-<h2>촬영장비</h2>
+<h2 id="linkEtc1">촬영장비</h2>
 <div class='category-section'>
   <div class='category-section2'>
     <h2>삼각대</h2>
@@ -329,7 +346,7 @@
 
 
 
-<h2>배터리</h2>
+<h2 id="linkPower">배터리</h2>
 <div class='category-section'>
 <input type="checkbox" id="V마운트배터리" name="equipment" value="V마운트배터리" onchange="toggleQuantityInput(this, 'qty_V마운트배터리')"> <label for="V마운트배터리">V마운트배터리 (조명용배터리) [최대 8개]</label>
 <input type="number" id="qty_V마운트배터리" name="quantity_V마운트배터리" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
@@ -340,7 +357,7 @@
 <input type="checkbox" id="소니 NP-FZ100" name="equipment" value="소니 NP-FZ100" onchange="toggleQuantityInput(this, 'qty_소니 NP-FZ100')"> <label for="소니 NP-FZ100">소니 NP-FZ100 (미러리스용 배터리) [최대 6개]</label>
 <input type="number" id="qty_소니 NP-FZ100" name="quantity_소니 NP-FZ100" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 </div>
-<h2>기타</h2>
+<h2 id="linkEtc2">기타</h2>
 <div class='category-section'>
 <input type="checkbox" id="캐리어" name="equipment" value="캐리어" onchange="toggleQuantityInput(this, 'qty_캐리어')"> <label for="캐리어">캐리어 [최대 2개]</label>
 <input type="number" id="qty_캐리어" name="quantity_캐리어" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
