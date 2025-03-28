@@ -12,35 +12,36 @@
     }
 
     body {
-      font-family: 'NanumSquare', Arial, sans-serif;
-      margin: 20px;
-      line-height: 1.6;
+      font-family: 'NanumSquare',Arial, sans-serif;
+      background-color: #eef1f5;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 50px 20px;
+    }
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 720px;
     }
     span{
       text-align: center;
       color:#333;
     }
 
-    .titlename{
-      margin-top: 50px;
-      line-height: 1.0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 20px;
-      background-color: #00035c;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
     
     .titlename h1 {
-      font-family: 'NanumSquare';
-      text-align: center;
-      color: #ffffff;
+        text-align: center;
+      color: #333;
+      margin-bottom: 30px;
     }
     .titlename h2 {
-      font-family: 'NanumSquare';
-      text-align: center;
-      color: #ffffff;
+        text-align: center;
+      color: #333;
+      margin-bottom: 30px;
     }
     .form-section {
       margin-bottom: 20px;
@@ -94,13 +95,22 @@
       margin-right: 10px;
     }
     button {
-      background-color: #0005a4;
+      padding: 12px;
+      width: 100%;
+      background-color: #4a90e2;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
       color: white;
       border: none;
       cursor: pointer;
     }
     button:hover {
-      background-color: #00035a;
+        background-color: #357ab8;
     }
     .quantity-input {
       width: 70px;
@@ -120,8 +130,9 @@
   </style>
 </head>
 <body>
-  <div class="titlename"><h1>한남대 미디어영상학과</h1>
-    <h2>대여 신청 양식 생성 도구</h2></div>
+    <element class="container">
+  <div class="titlename">
+    <h2>장비 대여 신청 양식 생성 도구</h2></div>
   
   <form id="rentalForm">
     
@@ -385,7 +396,7 @@
   <div id="result">선택된 장비와 수량이 여기에 표시됩니다.</div>
   <br>
   <span>❖ 해당 사이트는 개인정보를 수집, 저장하지 않습니다.</span>
-
+</element>
   <script>
     function toggleQuantityInput(checkbox, quantityInputId) {
       const quantityInput = document.getElementById(quantityInputId);
