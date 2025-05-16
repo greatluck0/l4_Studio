@@ -152,12 +152,12 @@
   <label for="mokjuk">대여목적:</label>
   <input type="text" id="mokjuk" name="mokjuk" placeholder="대여 목적 입력 (상세하게 서술할 것 / 강의이름, 촬영목적, 기타 등등 상세히)"><br>
 
-  <label for="rentalDate">대여일 (시간 포함):</label>
+  <label for="rentalDate">대여일 <a style="color:red;">(시간 포함, 09:00~20:00)</a>:</label>
   <input type="datetime-local" id="rentalDate" name="rentalDate"><br>
 
-  <label for="returnDate">반납일 (시간 포함):</label>
+  <label for="returnDate">반납일 <a style="color:red;">(시간 포함, 09:00~20:00)</a>:</label>
   <input type="datetime-local" id="returnDate" name="returnDate"><br>
-  <p>✔ 이용신청은 반납예정일로부터 10일 전부터, 대여예정일 3일 전까지 신청가능 / 모든 대여는 일일 09시 부터 20시까지 시간내에 신청.</p>
+  <p style="color:red;">✔ 이용신청은 반납예정일로부터 10일 전부터, 대여예정일 3일 전까지 신청가능<br>✔ 모든 대여는 일일 09시 부터 20시까지 시간내에 신청.<br>✔ 대여 신청자 본인이 직접 방문하여 대여와 반납을 진행하여야 함.</p>
 </div>
 <br>
 
@@ -179,36 +179,36 @@
       <h2 id="linkBody">카메라바디</h2>
 <div class='category-section'>
 
-    <input type="checkbox" id="소니 A7M3" name="equipment" value="소니 A7M3" onchange="toggleQuantityInput(this, 'qty_소니 A7M3')"> <label for="소니 A7M3">소니 A7M3 [최대 3개]</label>
+    <input type="checkbox" id="소니 A7M3" name="equipment" value="소니 A7M3 셋트" onchange="toggleQuantityInput(this, 'qty_소니 A7M3')"> <label for="소니 A7M3">소니 A7M3 + 소니 배터리 1개 + SD카드 1개 [최대 3개]</label>
     <input type="number" id="qty_소니 A7M3" name="quantity_소니 A7M3" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 
 
 
-    <input type="checkbox" id="캐논 EOS 6D" name="equipment" value="캐논 EOS 6D" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 6D')"> <label for="캐논 EOS 6D">캐논 EOS 6D [최대 1개]</label>
+    <input type="checkbox" id="캐논 EOS 6D" name="equipment" value="캐논 EOS 6D 셋트" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 6D')"> <label for="캐논 EOS 6D">캐논 EOS 6D + 캐논 배터리 1개 + SD카드 1개 [최대 1개]</label>
     <input type="number" id="qty_캐논 EOS 6D" name="quantity_캐논 EOS 6D" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 
-    <input type="checkbox" id="캐논 EOS 80D" name="equipment" value="캐논 EOS 80D" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 80D')"> <label for="캐논 EOS 80D">캐논 EOS 80D [최대 2개]</label>
+    <input type="checkbox" id="캐논 EOS 80D" name="equipment" value="캐논 EOS 80D 셋트" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 80D')"> <label for="캐논 EOS 80D">캐논 EOS 80D + 캐논 배터리 1개 + SD카드 1개 [최대 2개]</label>
     <input type="number" id="qty_캐논 EOS 80D" name="quantity_캐논 EOS 80D" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 
-    <input type="checkbox" id="캐논 EOS 90D" name="equipment" value="캐논 EOS 90D" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 90D')"> <label for="캐논 EOS 90D">캐논 EOS 90D [최대 1개]</label>
+    <input type="checkbox" id="캐논 EOS 90D" name="equipment" value="캐논 EOS 90D 셋트" onchange="toggleQuantityInput(this, 'qty_캐논 EOS 90D')"> <label for="캐논 EOS 90D">캐논 EOS 90D + 캐논 배터리 1개 + SD카드 1개 [최대 1개]</label>
     <input type="number" id="qty_캐논 EOS 90D" name="quantity_캐논 EOS 90D" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-    <input type="checkbox" id="CANON Professional XA20" name="equipment" value="캐논 캠코더 XA20" onchange="toggleQuantityInput(this, 'qty_CANON Professional XA20')"> <label for="CANON Professional XA20">캐논 캠코더 XA20 [최대 5개]</label>
+    <input type="checkbox" id="CANON Professional XA20" name="equipment" value="캐논 캠코더 XA20 셋트" onchange="toggleQuantityInput(this, 'qty_CANON Professional XA20')"> <label for="CANON Professional XA20">캐논 캠코더 XA20 + 캐논 캠코더 배터리 1개 + SD카드 1개 [최대 5개]</label>
     <input type="number" id="qty_CANON Professional XA20" name="quantity_CANON Professional XA20" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-    <p>✔ 카메라 배터리와 SD카드는 하단 메뉴에서 별도 신청.</p>
+    <p style="color: red;">✔ 카메라 <b>바디 한개 당 배터리 1개, SD카드 1개 기본 제공</b><br>✔ 추가 배터리는 하단에서 추가 신청 가능</p>
 </div>
 
 <h2 id="linkLens">카메라렌즈</h2>
 <div class='category-section'>
   <div class='category-section2'>
     <h2>소니 풀프레임 렌즈</h2>
-    <p>* 소니 A7M3</p>
+    <p style="color:red;">* 소니 A7M3</p>
 
     <input type="checkbox" id="SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS" name="equipment" value="소니 FE 24-70mm F4 ZA OSS" onchange="toggleQuantityInput(this, 'qty_SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS')"> <label for="SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS">소니 FE 24-70mm F4 ZA OSS [최대 3개]</label>
     <input type="number" id="qty_SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS" name="quantity_SONY 알파 Vario-Tessar T* FE 24-70mm F4 ZA OSS" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
   </div>
   <div class='category-section2'>
     <h2>캐논 크롭센서 렌즈</h2>
-    <p>* 캐논 80D, 90D</p>
+    <p style="color:red;">* 캐논 80D, 90D</p>
     <input type="checkbox" id="캐논 EF-S 17-55mm F2.8 IS USM" name="equipment" value="캐논 EF-S 17-55mm F2.8 IS USM" onchange="toggleQuantityInput(this, 'qty_캐논 EF-S 17-55mm F2.8 IS USM')"> <label for="캐논 EF-S 17-55mm F2.8 IS USM">캐논 EF-S 17-55mm F2.8 IS USM [최대 2개]</label>
     <input type="number" id="qty_캐논 EF-S 17-55mm F2.8 IS USM" name="quantity_캐논 EF-S 17-55mm F2.8 IS USM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 
@@ -226,7 +226,7 @@
 
   <div class='category-section2'>
     <h2>캐논 풀프레임 렌즈</h2>
-    <p>* 캐논 80D, 90D, 6D</p>
+    <p style="color:red;">* 캐논 80D, 90D, 6D</p>
     <input type="checkbox" id="캐논 EF 50mm F1.8 STM" name="equipment" value="캐논 EF 50mm F1.8 STM" onchange="toggleQuantityInput(this, 'qty_캐논 EF 50mm F1.8 STM')"> <label for="캐논 EF 50mm F1.8 STM">캐논 EF 50mm F1.8 STM [최대 2개]</label>
     <input type="number" id="qty_캐논 EF 50mm F1.8 STM" name="quantity_캐논 EF 50mm F1.8 STM" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 
@@ -254,17 +254,12 @@
 
     <div class='category-section2'>
       <h2>영화촬영용 붐마이크 품목 (XLR오디오)</h2>
-      <input type="checkbox" id="RODE 로데 NTG4 초지향성 샷건 마이크" name="equipment" value="RODE 로데 NTG4 초지향성 샷건 마이크" onchange="toggleQuantityInput(this, 'qty_RODE 로데 NTG4 초지향성 샷건 마이크')"> <label for="RODE 로데 NTG4 초지향성 샷건 마이크">RODE 로데 NTG4 초지향성 샷건 마이크 [최대 3개]</label>
-      <input type="number" id="qty_RODE 로데 NTG4 초지향성 샷건 마이크" name="quantity_RODE 로데 NTG4 초지향성 샷건 마이크" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+      <input type="checkbox" id="RODE 로데 붐마이크 셋트" name="equipment" value="RODE 로데 붐마이크 셋트" onchange="toggleQuantityInput(this, 'qty_RODE 로데 붐마이크 셋트')"> <label for="RODE 로데 붐마이크 셋트"><a style="color:red;">RODE 로데 붐마이크 셋트 (NTG4 + BLIMP + 쇼크마운트 + 폴대 + XLR 케이블) [최대 2개]</a></label>
+      <input type="number" id="qty_RODE 로데 붐마이크 셋트" name="quantity_RODE 로데 붐마이크 셋트" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+    <input type="checkbox" id="TASCAM DR-70D 오디오 레코더" name="equipment" value="TASCAM DR-70D 오디오 레코더" onchange="toggleQuantityInput(this, 'qty_TASCAM DR-70D 오디오 레코더')"> <label for="TASCAM DR-70D 오디오 레코더">TASCAM DR-70D 오디오 레코더 [최대 2개]</label>
+    <input type="number" id="qty_TASCAM DR-70D 오디오 레코더" name="quantity_TASCAM DR-70D 오디오 레코더" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 
-      <input type="checkbox" id="RODE 핸들" name="equipment" value="RODE 핸들" onchange="toggleQuantityInput(this, 'qty_RODE 핸들')"> <label for="RODE 핸들">RODE 핸들 [최대 3개]</label>
-      <input type="number" id="qty_RODE 핸들" name="quantity_RODE 핸들" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-
-      <input type="checkbox" id="RODE 블림프, 윈드실드" name="equipment" value="RODE 블림프, 윈드실드" onchange="toggleQuantityInput(this, 'qty_RODE 블림프, 윈드실드')"> <label for="RODE 블림프, 윈드실드">RODE 블림프, 윈드실드 [최대 2개]</label>
-      <input type="number" id="qty_RODE 블림프, 윈드실드" name="quantity_RODE 블림프, 윈드실드" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-
-      <input type="checkbox" id="RODE 붐폴" name="equipment" value="RODE 붐폴" onchange="toggleQuantityInput(this, 'qty_RODE 붐폴')"> <label for="RODE 붐폴">RODE 붐폴 [최대 3개]</label>
-      <input type="number" id="qty_RODE 붐폴" name="quantity_RODE 붐폴" class="quantity-input" placeholder="수량" min="1" style="display: none;">
+      <p style="color: red;">✔ <b>단일 품목에서 붐마이크 셋트로 통합하여 변경함</b><br>✔ TASCAM 전원 배터리는 AA건전지 4개 사용. 건전지 제공 하지 않음.</p>
     </div>
     <div class='category-section2'>
       <h2>카메라용 샷건마이크 (3.5mm 오디오)</h2>
@@ -272,16 +267,13 @@
         <input type="checkbox" id="로데 비디오 마이크 프로 플러스" name="equipment" value="로데 비디오 마이크 프로 플러스" onchange="toggleQuantityInput(this, 'qty_로데 비디오 마이크 프로 플러스')"> <label for="로데 비디오 마이크 프로 플러스">로데 비디오 마이크 프로 플러스 샷건마이크 [최대 2개]</label>
         <input type="number" id="qty_로데 비디오 마이크 프로 플러스" name="quantity_로데 비디오 마이크 프로 플러스" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 
-        <input type="checkbox" id="로데 비디오 마이크로" name="equipment" value="로데 비디오 마이크로" onchange="toggleQuantityInput(this, 'qty_로데 비디오 마이크로')"> <label for="로데 비디오 마이크로">로데 비디오 마이크로 샷건마이크[최대 1개]</label>
+        <input type="checkbox" id="로데 비디오 마이크로" name="equipment" value="로데 비디오 마이크로" onchange="toggleQuantityInput(this, 'qty_로데 비디오 마이크로')"> <label for="로데 비디오 마이크로">로데 비디오 마이크로 샷건마이크 [최대 1개]</label>
         <input type="number" id="qty_로데 비디오 마이크로" name="quantity_로데 비디오 마이크로" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
+        <input type="checkbox" id="RODE Wireless GO 무선 외장마이크" name="equipment" value="RODE Wireless GO 무선 외장마이크" onchange="toggleQuantityInput(this, 'qty_RODE Wireless GO 무선 외장마이크')"> <label for="RODE Wireless GO 무선 외장마이크">무선 마이크 / RODE Wireless GO 무선 외장마이크 [최대 5개]</label>
+        <input type="number" id="qty_RODE Wireless GO 무선 외장마이크" name="quantity_RODE Wireless GO 무선 외장마이크" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
     </div>
-    <input type="checkbox" id="RODE Wireless GO 무선 외장마이크" name="equipment" value="RODE Wireless GO 무선 외장마이크" onchange="toggleQuantityInput(this, 'qty_RODE Wireless GO 무선 외장마이크')"> <label for="RODE Wireless GO 무선 외장마이크">무선 마이크 / RODE Wireless GO 무선 외장마이크 [최대 5개]</label>
-    <input type="number" id="qty_RODE Wireless GO 무선 외장마이크" name="quantity_RODE Wireless GO 무선 외장마이크" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 
-    <input type="checkbox" id="TASCAM DR-70D 오디오 레코더" name="equipment" value="TASCAM DR-70D 오디오 레코더" onchange="toggleQuantityInput(this, 'qty_TASCAM DR-70D 오디오 레코더')"> <label for="TASCAM DR-70D 오디오 레코더">TASCAM DR-70D 오디오 레코더 [최대 4개]</label>
-    <input type="number" id="qty_TASCAM DR-70D 오디오 레코더" name="quantity_TASCAM DR-70D 오디오 레코더" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 
-    <p>✔ TASCAM 전원 배터리는 AA건전지 4개 사용. 건전지 제공 하지 않음.</p>
 </div>
 <h2 id="linkLight">조명</h2>
 <div class='category-section'>
@@ -340,7 +332,7 @@
 
 <input type="checkbox" id="슬라이더" name="equipment" value="슬라이더" onchange="toggleQuantityInput(this, 'qty_슬라이더')"> <label for="슬라이더">슬라이더 [최대 2개]</label>
 <input type="number" id="qty_슬라이더" name="quantity_슬라이더" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="SD카드" name="equipment" value="SD카드" onchange="toggleQuantityInput(this, 'qty_SD카드')"> <label for="SD카드">SD카드 [최대 10개]</label>
+<input type="checkbox" id="SD카드" name="equipment" value="SD카드" onchange="toggleQuantityInput(this, 'qty_SD카드')"> <label for="SD카드">SD카드 [최대 3개]</label>
 <input type="number" id="qty_SD카드" name="quantity_SD카드" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 <input type="checkbox" id="DJI ronin RS-2" name="equipment" value="DJI ronin RS-2" onchange="toggleQuantityInput(this, 'qty_DJI ronin RS-2')"> <label for="DJI ronin RS-2">DJI 짐벌 ronin RS-2 [최대 1개]</label>
 <input type="number" id="qty_DJI ronin RS-2" name="quantity_DJI ronin RS-2" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
@@ -359,21 +351,17 @@
 
 <h2 id="linkPower">배터리</h2>
 <div class='category-section'>
-<input type="checkbox" id="V마운트배터리" name="equipment" value="V마운트배터리" onchange="toggleQuantityInput(this, 'qty_V마운트배터리')"> <label for="V마운트배터리">V마운트배터리 (조명용배터리) [최대 8개]</label>
+<input type="checkbox" id="V마운트배터리" name="equipment" value="V마운트배터리" onchange="toggleQuantityInput(this, 'qty_V마운트배터리')"> <label for="V마운트배터리">V마운트 조명 배터리 (조명용배터리) [최대 8개]</label>
 <input type="number" id="qty_V마운트배터리" name="quantity_V마운트배터리" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 LP-E6" name="equipment" value="캐논 LP-E6" onchange="toggleQuantityInput(this, 'qty_캐논 LP-E6')"> <label for="캐논 LP-E6">캐논 LP-E6 (DSLR용 배터리) [최대 9개]</label>
+<input type="checkbox" id="캐논 LP-E6" name="equipment" value="캐논 LP-E6" onchange="toggleQuantityInput(this, 'qty_캐논 LP-E6')"> <label for="캐논 LP-E6"><a style="color:red;">캐논 추가 배터리 LP-E6 (DSLR용 배터리) [최대 3개]</a></label>
 <input type="number" id="qty_캐논 LP-E6" name="quantity_캐논 LP-E6" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="캐논 BP-828" name="equipment" value="캐논 BP-828" onchange="toggleQuantityInput(this, 'qty_캐논 BP-828')"> <label for="캐논 BP-828">캐논 BP-828 (캠코더용 배터리) [최대 4개]</label>
-<input type="number" id="qty_캐논 BP-828" name="quantity_캐논 BP-828" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="소니 NP-FZ100" name="equipment" value="소니 NP-FZ100" onchange="toggleQuantityInput(this, 'qty_소니 NP-FZ100')"> <label for="소니 NP-FZ100">소니 NP-FZ100 (미러리스용 배터리) [최대 6개]</label>
+<input type="checkbox" id="소니 NP-FZ100" name="equipment" value="소니 NP-FZ100" onchange="toggleQuantityInput(this, 'qty_소니 NP-FZ100')"> <label for="소니 NP-FZ100"><a style="color:red;">소니 추가 배터리 NP-FZ100 (미러리스용 배터리) [최대 3개]</a></label>
 <input type="number" id="qty_소니 NP-FZ100" name="quantity_소니 NP-FZ100" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 </div>
 <h2 id="linkEtc2">기타</h2>
 <div class='category-section'>
 <input type="checkbox" id="캐리어" name="equipment" value="캐리어" onchange="toggleQuantityInput(this, 'qty_캐리어')"> <label for="캐리어">캐리어 [최대 2개]</label>
 <input type="number" id="qty_캐리어" name="quantity_캐리어" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
-<input type="checkbox" id="전기릴선" name="equipment" value="전기릴선" onchange="toggleQuantityInput(this, 'qty_전기릴선')"> <label for="전기릴선">전기릴선 [최대 3개]</label>
-<input type="number" id="qty_전기릴선" name="quantity_전기릴선" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 <input type="checkbox" id="SD카드리더기" name="equipment" value="SD카드리더기" onchange="toggleQuantityInput(this, 'qty_SD카드리더기')"> <label for="SD카드리더기">SD카드리더기 [최대 1개]</label>
 <input type="number" id="qty_SD카드리더기" name="quantity_SD카드리더기" class="quantity-input" placeholder="수량" min="1" style="display: none;"><br>
 </div>
